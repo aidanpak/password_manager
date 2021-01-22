@@ -1,6 +1,7 @@
 # password_manager
-This program stores usernames and passwords in an SQLite Database using class objects and context managers. Create your own custom password for your database and store your information securely!
+The password_manager script stores usernames and passwords in an SQLite Database using class objects and context managers. The connection file establishes connection to the database, and in the password_manager file, the class object is imported. 
 
+Create your own custom password for your database and store your information securely! 
 Password Manager
     - stores username and passwords
     - uses an SQL database -- protection against SQL injection
