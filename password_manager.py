@@ -33,21 +33,12 @@ def create_table():
 
 
 
-#creates random password for you automatically.. maybe using regex.. or random library #returns password
-def create_randomPassword():
-    edit = 'Sample Random Password'
-    return edit
-
 
 #adds new entries to database
 def add_entry():
     website= input('Enter the name of the website you would like to enter: ').strip()
     username = input(f'Enter your username for {website} ').strip()
-    generate = input('Would you like to generate a random password for source? Type "yes" or "no" ').strip()
-    if generate == 'yes':
-        create_randomPassword()
-    else:
-        password = input(f'Enter your password for {website} ').strip()
+    password = input(f'Enter your password for {website} ').strip()
 
 
     with DatabaseConnection('python_roboform.db') as connection:
@@ -64,11 +55,7 @@ def edit_entry():
     if edit_options == 'username':
         edit=input('What would you like to change your username to: ').strip()
     elif edit_options =='password':
-        random = input(f'Would you like to generate a random password or enter a new password? Type "random" or "new" ').strip()
-        if random == 'random':
-            create_randomPassword()
-        else:
-            edit = input('What would you like to change your password to: ').strip()
+        edit = input('What would you like to change your password to: ').strip()
 
     with DatabaseConnection('python_roboform.db') as connection:
         cursor = connection.cursor()
